@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:testapp/demopage.dart';
+import 'package:testapp/LayoutBuilderTesting.dart';
+import 'package:testapp/mediaQueryTesting.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: DemoPage(),
+      home: Mediaquerytesting(),
     );
   }
 }
