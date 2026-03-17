@@ -127,7 +127,9 @@ import 'package:provider/provider.dart';
 import 'package:testapp/provider_state_management/provider/count_provider.dart';
 import 'package:testapp/provider_state_management/provider/example_one_provider.dart';
 import 'package:testapp/provider_state_management/provider/favourite_provider.dart';
+import 'package:testapp/provider_state_management/provider/theme_changer_provider.dart';
 import 'package:testapp/provider_state_management/screens/count_example.dart';
+import 'package:testapp/provider_state_management/screens/dark_theme.dart';
 import 'package:testapp/provider_state_management/screens/favourite/favourite_screen.dart';
 import 'package:testapp/provider_state_management/why_provider.dart';
 import 'package:testapp/provider_state_management/screens/example_one.dart';
@@ -141,20 +143,41 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+  //final themeChanger = Provider.of<ThemeChangerProvider>(context);
     return MultiProvider(
       providers: [
        ChangeNotifierProvider(create: (_) => CountProvider()),
        ChangeNotifierProvider(create: (_) => ExampleOneProvider()),
        ChangeNotifierProvider(create: (_) => FavouriteItemProvider()),
+       ChangeNotifierProvider(create: (_) => ThemeChangerProvider()),
+
       ],
-      child: MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: FavouriteScreen(),
-     ),
+      child: Builder(builder: (BuildContext context){
+        final themeChanger = Provider.of<ThemeChangerProvider>(context);
+        return MaterialApp(
+         debugShowCheckedModeBanner: false,
+         title: 'Flutter Demo',
+         themeMode:themeChanger.themeMode,
+         theme: ThemeData(
+          brightness: Brightness.light,
+         primarySwatch: Colors.red,
+         appBarTheme: AppBarTheme(
+              backgroundColor: Colors.orange,
+            ),
+          ),
+          darkTheme: ThemeData(
+            brightness: Brightness.dark,
+            primarySwatch: Colors.pink,
+            appBarTheme: AppBarTheme(
+              backgroundColor: Colors.teal,
+            ),
+            iconTheme: IconThemeData(
+              color: Colors.pink,
+            )
+          ),
+         home: DarkThemeScreen(),
+        );
+      })
     );
   }
 }
