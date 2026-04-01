@@ -124,6 +124,7 @@
 // ------------ MULTIPROVIDER EXAMPLE -----------  //////////
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:testapp/provider_state_management/provider/auth_provider.dart';
 import 'package:testapp/provider_state_management/provider/count_provider.dart';
 import 'package:testapp/provider_state_management/provider/example_one_provider.dart';
 import 'package:testapp/provider_state_management/provider/favourite_provider.dart';
@@ -131,6 +132,7 @@ import 'package:testapp/provider_state_management/provider/theme_changer_provide
 import 'package:testapp/provider_state_management/screens/count_example.dart';
 import 'package:testapp/provider_state_management/screens/dark_theme.dart';
 import 'package:testapp/provider_state_management/screens/favourite/favourite_screen.dart';
+import 'package:testapp/provider_state_management/screens/login.dart';
 import 'package:testapp/provider_state_management/screens/value_notify_listener.dart';
 import 'package:testapp/provider_state_management/why_provider.dart';
 import 'package:testapp/provider_state_management/screens/example_one.dart';
@@ -151,7 +153,7 @@ class MyApp extends StatelessWidget {
        ChangeNotifierProvider(create: (_) => ExampleOneProvider()),
        ChangeNotifierProvider(create: (_) => FavouriteItemProvider()),
        ChangeNotifierProvider(create: (_) => ThemeChangerProvider()),
-
+       ChangeNotifierProvider(create: (_) => AuthProvider()),
       ],
       child: Builder(builder: (BuildContext context){
         final themeChanger = Provider.of<ThemeChangerProvider>(context);
@@ -176,7 +178,7 @@ class MyApp extends StatelessWidget {
               color: Colors.pink,
             )
           ),
-         home: NotifyListenerScreen(),
+         home: LoginScreen(),
         );
       })
     );
