@@ -121,21 +121,75 @@
 // }
 
 
-// ------------ MULTIPROVIDER EXAMPLE -----------  //////////
+// // ------------ MULTIPROVIDER EXAMPLE -----------  //////////
+// import 'package:flutter/material.dart';
+// import 'package:provider/provider.dart';
+// import 'package:testapp/provider_state_management/provider/auth_provider.dart';
+// import 'package:testapp/provider_state_management/provider/count_provider.dart';
+// import 'package:testapp/provider_state_management/provider/example_one_provider.dart';
+// import 'package:testapp/provider_state_management/provider/favourite_provider.dart';
+// import 'package:testapp/provider_state_management/provider/theme_changer_provider.dart';
+// import 'package:testapp/provider_state_management/screens/count_example.dart';
+// import 'package:testapp/provider_state_management/screens/dark_theme.dart';
+// import 'package:testapp/provider_state_management/screens/favourite/favourite_screen.dart';
+// import 'package:testapp/provider_state_management/screens/login.dart';
+// import 'package:testapp/provider_state_management/screens/value_notify_listener.dart';
+// import 'package:testapp/provider_state_management/why_provider.dart';
+// import 'package:testapp/provider_state_management/screens/example_one.dart';
+
+// void main() {
+//   runApp(const MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//   //final themeChanger = Provider.of<ThemeChangerProvider>(context);
+//     return MultiProvider(
+//       providers: [
+//        ChangeNotifierProvider(create: (_) => CountProvider()),
+//        ChangeNotifierProvider(create: (_) => ExampleOneProvider()),
+//        ChangeNotifierProvider(create: (_) => FavouriteItemProvider()),
+//        ChangeNotifierProvider(create: (_) => ThemeChangerProvider()),
+//        ChangeNotifierProvider(create: (_) => AuthProvider()),
+//       ],
+//       child: Builder(builder: (BuildContext context){
+//         final themeChanger = Provider.of<ThemeChangerProvider>(context);
+//         return MaterialApp(
+//          debugShowCheckedModeBanner: false,
+//          title: 'Flutter Demo',
+//          themeMode:themeChanger.themeMode,
+//          theme: ThemeData(
+//           brightness: Brightness.light,
+//          primarySwatch: Colors.red,
+//          appBarTheme: AppBarTheme(
+//               backgroundColor: Colors.orange,
+//             ),
+//           ),
+//           darkTheme: ThemeData(
+//             brightness: Brightness.dark,
+//             primarySwatch: Colors.pink,
+//             appBarTheme: AppBarTheme(
+//               backgroundColor: Colors.teal,
+//             ),
+//             iconTheme: IconThemeData(
+//               color: Colors.pink,
+//             )
+//           ),
+//          home: LoginScreen(),
+//         );
+//       })
+//     );
+//   }
+// }
+
+
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:testapp/provider_state_management/provider/auth_provider.dart';
-import 'package:testapp/provider_state_management/provider/count_provider.dart';
-import 'package:testapp/provider_state_management/provider/example_one_provider.dart';
-import 'package:testapp/provider_state_management/provider/favourite_provider.dart';
-import 'package:testapp/provider_state_management/provider/theme_changer_provider.dart';
-import 'package:testapp/provider_state_management/screens/count_example.dart';
-import 'package:testapp/provider_state_management/screens/dark_theme.dart';
-import 'package:testapp/provider_state_management/screens/favourite/favourite_screen.dart';
-import 'package:testapp/provider_state_management/screens/login.dart';
-import 'package:testapp/provider_state_management/screens/value_notify_listener.dart';
-import 'package:testapp/provider_state_management/why_provider.dart';
-import 'package:testapp/provider_state_management/screens/example_one.dart';
+import 'package:testapp/homePage.dart';
+
+import 'rest_api/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -144,43 +198,21 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-  //final themeChanger = Provider.of<ThemeChangerProvider>(context);
-    return MultiProvider(
-      providers: [
-       ChangeNotifierProvider(create: (_) => CountProvider()),
-       ChangeNotifierProvider(create: (_) => ExampleOneProvider()),
-       ChangeNotifierProvider(create: (_) => FavouriteItemProvider()),
-       ChangeNotifierProvider(create: (_) => ThemeChangerProvider()),
-       ChangeNotifierProvider(create: (_) => AuthProvider()),
-      ],
-      child: Builder(builder: (BuildContext context){
-        final themeChanger = Provider.of<ThemeChangerProvider>(context);
-        return MaterialApp(
-         debugShowCheckedModeBanner: false,
-         title: 'Flutter Demo',
-         themeMode:themeChanger.themeMode,
-         theme: ThemeData(
-          brightness: Brightness.light,
-         primarySwatch: Colors.red,
-         appBarTheme: AppBarTheme(
-              backgroundColor: Colors.orange,
-            ),
-          ),
-          darkTheme: ThemeData(
-            brightness: Brightness.dark,
-            primarySwatch: Colors.pink,
-            appBarTheme: AppBarTheme(
-              backgroundColor: Colors.teal,
-            ),
-            iconTheme: IconThemeData(
-              color: Colors.pink,
-            )
-          ),
-         home: LoginScreen(),
-        );
-      })
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      ),
+      home: HomeScreenRestApi(),
     );
   }
 }
+
+
+
+
+
