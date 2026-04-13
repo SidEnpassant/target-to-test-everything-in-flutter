@@ -191,6 +191,7 @@ import 'package:testapp/homePage.dart';
 import 'package:testapp/rest_api_get/example_four.dart';
 import 'package:testapp/rest_api_get/example_three.dart';
 import 'package:testapp/rest_api_get/example_two.dart';
+import 'package:testapp/rest_api_post/signup.dart';
 
 import 'rest_api_get/home_screen.dart';
 
@@ -210,7 +211,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: ExampleThree(),
+      home: SignUpScreen(),
     );
   }
 }
