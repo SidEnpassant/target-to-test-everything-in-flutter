@@ -1,8 +1,9 @@
 import 'package:equatable/equatable.dart';
 
+// CounterEvent is the base class 
 abstract class CounterEvent extends Equatable{
 
-  const CounterEvent();
+  const CounterEvent(); // constructor
   @override
   List<Object> get props => [];
 }

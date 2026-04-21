@@ -219,8 +219,12 @@
 
 // --------------- BLOCK STATE MANAGEMENT ------------ /////
 
+
+// BLOC STATE MANAGEMENT
 import 'package:flutter/material.dart';
-import 'bloc_state_management/bloc_explore/ui/counter_screen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:testapp/bloc_state_management/bloc_explore_counter/bloc/counter/counter_bloc.dart';
+import 'bloc_state_management/bloc_explore_counter//ui/counter_screen.dart';
 import 'bloc_state_management/equatable_testing.dart';
 
 
@@ -234,13 +238,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: CounterScreen(),
+    return BlocProvider(
+        create: (_) => CounterBloc(),
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          ),
+          home: CounterScreen(),
+        ),
     );
   }
 }

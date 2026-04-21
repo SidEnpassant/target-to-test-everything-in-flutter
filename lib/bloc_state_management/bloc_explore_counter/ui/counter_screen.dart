@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:testapp/bloc_state_management/bloc_explore_counter/bloc/counter/counter_bloc.dart';
+import 'package:testapp/bloc_state_management/bloc_explore_counter/bloc/counter/counter_event.dart';
+import 'package:testapp/bloc_state_management/bloc_explore_counter/bloc/counter/counter_state.dart';
 
 class CounterScreen extends StatefulWidget {
   const CounterScreen({super.key});
@@ -10,18 +14,27 @@ class CounterScreen extends StatefulWidget {
 class _CounterScreenState extends State<CounterScreen> {
   @override
   Widget build(BuildContext context) {
+    print('BUILD METHOD BUILD');
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar(  
         title: Text('Counter Example'),
-      ),
+      ),  
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Center(
-            child: Text('0' , style: TextStyle(
-              fontSize: 50,
-            ),),
+        children: [ 
+          BlocBuilder<CounterBloc , CounterState>(
+              builder: (context , state){
+                print('Build');
+                return Center(
+                  child: Text(
+                    state.counter.toString(),
+                    style: TextStyle(
+                    fontSize: 50,
+                    ),
+                  ),
+                );
+              }
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -29,12 +42,14 @@ class _CounterScreenState extends State<CounterScreen> {
             children: [
               ElevatedButton(
                   onPressed: (){
+                    context.read<CounterBloc>().add(IncrementCounter());
                   },
                   child: Text('Increment')
               ),
               SizedBox(width: 20,),
               ElevatedButton(
                   onPressed: (){
+                    context.read<CounterBloc>().add(DecrementCounter());
                   },
                   child: Text('Decrement')
               )
