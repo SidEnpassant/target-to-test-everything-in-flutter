@@ -229,6 +229,8 @@ import 'bloc_state_management/bloc_explore_counter//ui/counter_screen.dart';
 import 'bloc_state_management/equatable_testing.dart';
 import 'bloc_state_management/image_picker/ui/image_picker_screen.dart';
 import 'bloc_state_management/switch_example/ui/switch_example_screen.dart';
+import 'bloc_state_management/to_do_screen/bloc/to_do_bloc.dart';
+import 'bloc_state_management/to_do_screen/ui/to_do_screen.dart';
 
 
 void main() {
@@ -252,6 +254,9 @@ class MyApp extends StatelessWidget {
         BlocProvider(
             create: (context) => ImagePickerBloc(ImagePickerUtils()),
         ),
+        BlocProvider(
+            create: (context) => ToDoBloc(),
+        )
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -260,7 +265,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
         //home: CounterScreen(),
-        home: ImagePickerScreen(),
+        home: ToDoScreen(),
       ),
     );
   }
