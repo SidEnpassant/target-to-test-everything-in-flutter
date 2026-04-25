@@ -231,6 +231,8 @@ import 'bloc_state_management/favourite_app/bloc/favourite_app_bloc.dart';
 import 'bloc_state_management/favourite_app/repository/favourite_repository.dart';
 import 'bloc_state_management/favourite_app/ui/favourite_app_screen.dart';
 import 'bloc_state_management/image_picker/ui/image_picker_screen.dart';
+import 'bloc_state_management/posts_app/bloc/posts_bloc.dart';
+import 'bloc_state_management/posts_app/ui/posts_screen.dart';
 import 'bloc_state_management/switch_example/ui/switch_example_screen.dart';
 import 'bloc_state_management/to_do_screen/bloc/to_do_bloc.dart';
 import 'bloc_state_management/to_do_screen/ui/to_do_screen.dart';
@@ -262,6 +264,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
             create: (context) => FavouriteBloc(FavouriteRepository()),
+        ),
+        BlocProvider(
+          create: (context) => PostBloc(),
         )
       ],
       child: MaterialApp(
@@ -273,7 +278,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         //home: CounterScreen(),
-        home: FavouriteAppScreen(),
+        home: PostsScreen(),
       ),
     );
   }
