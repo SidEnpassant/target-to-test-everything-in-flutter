@@ -231,6 +231,7 @@ import 'bloc_state_management/favourite_app/bloc/favourite_app_bloc.dart';
 import 'bloc_state_management/favourite_app/repository/favourite_repository.dart';
 import 'bloc_state_management/favourite_app/ui/favourite_app_screen.dart';
 import 'bloc_state_management/image_picker/ui/image_picker_screen.dart';
+import 'bloc_state_management/login_signup_bloc/login/ui/login_screen.dart';
 import 'bloc_state_management/posts_app/bloc/posts_bloc.dart';
 import 'bloc_state_management/posts_app/ui/posts_screen.dart';
 import 'bloc_state_management/switch_example/ui/switch_example_screen.dart';
@@ -279,7 +280,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         //home: CounterScreen(),
-        home: CounterScreen(),
+        home: LoginScreen(),
       ),
     );
   }
