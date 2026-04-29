@@ -215,29 +215,90 @@
 // }
 
 
-// --------------- BLOCK STATE MANAGEMENT ------------ /////
+
+
+
+///// --------------- BLOCK STATE MANAGEMENT ------------ /////
 
 
 // BLOC STATE MANAGEMENT
+// import 'package:flutter/material.dart';
+// import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'package:testapp/bloc_state_management/bloc_explore_counter/bloc/counter/counter_bloc.dart';
+// import 'package:testapp/bloc_state_management/image_picker/bloc/image_picker_bloc.dart';
+// import 'package:testapp/bloc_state_management/image_picker/utils/image_picker_utils.dart';
+// import 'package:testapp/bloc_state_management/switch_example/bloc/switch_bloc.dart';
+// import 'bloc_state_management/bloc_explore_counter//ui/counter_screen.dart';
+// import 'bloc_state_management/equatable_testing.dart';
+// import 'bloc_state_management/favourite_app/bloc/favourite_app_bloc.dart';
+// import 'bloc_state_management/favourite_app/repository/favourite_repository.dart';
+// import 'bloc_state_management/favourite_app/ui/favourite_app_screen.dart';
+// import 'bloc_state_management/freezed_tutorial/code/home_screen.dart';
+// import 'bloc_state_management/image_picker/ui/image_picker_screen.dart';
+// import 'bloc_state_management/login_signup_bloc/login/ui/login_screen.dart';
+// import 'bloc_state_management/posts_app/bloc/posts_bloc.dart';
+// import 'bloc_state_management/posts_app/ui/posts_screen.dart';
+// import 'bloc_state_management/switch_example/ui/switch_example_screen.dart';
+// import 'bloc_state_management/to_do_screen/bloc/to_do_bloc.dart';
+// import 'bloc_state_management/to_do_screen/ui/to_do_screen.dart';
+//
+//
+// void main() {
+//   runApp(const MyApp());
+// }
+//
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+//
+//   // This widget is the root of your application.
+//   @override
+//   Widget build(BuildContext context) {
+//     return MultiBlocProvider(
+//       providers: [
+//         // BlocProvider(
+//         //   create: (_) => CounterBloc(),
+//         // ),
+//         /// SHOULD NOT GLOBALLY USE BLOC AS THAT IS NOT BEST PRACTICE USE LIKE USING COUNTER BLOC FOR COUNTER SCREEN
+//         BlocProvider(
+//           create: (context) => SwitchBloc(),
+//         ),
+//         BlocProvider(
+//             create: (context) => ImagePickerBloc(ImagePickerUtils()),
+//         ),
+//         BlocProvider(
+//             create: (context) => ToDoBloc(),
+//         ),
+//         BlocProvider(
+//             create: (context) => FavouriteBloc(FavouriteRepository()),
+//         ),
+//         BlocProvider(
+//           create: (context) => PostBloc(),
+//         )
+//       ],
+//       child: MaterialApp(
+//         debugShowCheckedModeBanner: false,
+//         title: 'Flutter Demo',
+//         theme: ThemeData(
+//           //brightness: Brightness.dark,
+//           // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+//           useMaterial3: true,
+//         ),
+//         //home: CounterScreen(),
+//         home: HomeScreen(),
+//       ),
+//     );
+//   }
+// }
+
+// BLOC CLEAN CODING
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:testapp/bloc_state_management/bloc_explore_counter/bloc/counter/counter_bloc.dart';
-import 'package:testapp/bloc_state_management/image_picker/bloc/image_picker_bloc.dart';
-import 'package:testapp/bloc_state_management/image_picker/utils/image_picker_utils.dart';
-import 'package:testapp/bloc_state_management/switch_example/bloc/switch_bloc.dart';
-import 'bloc_state_management/bloc_explore_counter//ui/counter_screen.dart';
-import 'bloc_state_management/equatable_testing.dart';
-import 'bloc_state_management/favourite_app/bloc/favourite_app_bloc.dart';
-import 'bloc_state_management/favourite_app/repository/favourite_repository.dart';
-import 'bloc_state_management/favourite_app/ui/favourite_app_screen.dart';
-import 'bloc_state_management/freezed_tutorial/code/home_screen.dart';
-import 'bloc_state_management/image_picker/ui/image_picker_screen.dart';
-import 'bloc_state_management/login_signup_bloc/login/ui/login_screen.dart';
-import 'bloc_state_management/posts_app/bloc/posts_bloc.dart';
-import 'bloc_state_management/posts_app/ui/posts_screen.dart';
-import 'bloc_state_management/switch_example/ui/switch_example_screen.dart';
-import 'bloc_state_management/to_do_screen/bloc/to_do_bloc.dart';
-import 'bloc_state_management/to_do_screen/ui/to_do_screen.dart';
+import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding/config/routes/routes_name.dart';
+import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding/view/splash/splash_screen.dart';
+
+import 'bloc_state_management/flutter_bloc_clean_coding/config/routes/routes.dart';
+
+
+
 
 
 void main() {
@@ -250,39 +311,21 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        // BlocProvider(
-        //   create: (_) => CounterBloc(),
-        // ),
-        /// SHOULD NOT GLOBALLY USE BLOC AS THAT IS NOT BEST PRACTICE USE LIKE USING COUNTER BLOC FOR COUNTER SCREEN
-        BlocProvider(
-          create: (context) => SwitchBloc(),
-        ),
-        BlocProvider(
-            create: (context) => ImagePickerBloc(ImagePickerUtils()),
-        ),
-        BlocProvider(
-            create: (context) => ToDoBloc(),
-        ),
-        BlocProvider(
-            create: (context) => FavouriteBloc(FavouriteRepository()),
-        ),
-        BlocProvider(
-          create: (context) => PostBloc(),
-        )
-      ],
-      child: MaterialApp(
+    return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           //brightness: Brightness.dark,
-          // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
         //home: CounterScreen(),
-        home: HomeScreen(),
-      ),
-    );
+      initialRoute: RoutesName.splashScreen,
+      onGenerateRoute: Routes.generateRoute,
+      );
   }
 }
+
+
+
+
