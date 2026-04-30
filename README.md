@@ -1,4 +1,4 @@
-# 30 DAYS OF FLUTTER
+# Everything-around-Flutter
 
 A new Flutter project.
 
