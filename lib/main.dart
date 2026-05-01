@@ -290,18 +290,22 @@
 //   }
 // }
 
-// BLOC CLEAN CODING
+// BLOC CLEAN CODING _secure_storage_reusable_components_singleton_pattern
 import 'package:flutter/material.dart';
-import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding/config/routes/routes_name.dart';
-import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding/view/splash/splash_screen.dart';
+import 'package:get_it/get_it.dart';
+import 'package:testapp/bloc_clean_movie_app/repository/movies/movies_http_api_repository.dart';
+import 'package:testapp/bloc_clean_movie_app/repository/movies/movies_repository.dart';
+import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/config/routes/routes_name.dart';
+import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/repository/auth/login_http_api_repository.dart';
+import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/repository/auth/login_mock_api_repository.dart';
+import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/repository/auth/login_repository.dart';
+import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/view/splash/splash_screen.dart';
 
-import 'bloc_state_management/flutter_bloc_clean_coding/config/routes/routes.dart';
+import 'bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/config/routes/routes.dart';
 
-
-
-
-
+GetIt getIt = GetIt.instance;
 void main() {
+  serviceLocator();
   runApp(const MyApp());
 }
 
@@ -320,7 +324,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         //home: CounterScreen(),
-      initialRoute: RoutesName.splashScreen,
+      initialRoute: RoutesName.moviesHomeScreen,
       onGenerateRoute: Routes.generateRoute,
       );
   }
@@ -328,4 +332,8 @@ class MyApp extends StatelessWidget {
 
 
 
+void serviceLocator(){
+  getIt.registerLazySingleton<LoginRepository>(() => LoginHttpApiRepository());
+  getIt.registerLazySingleton<MoviesRepository>(() => MoviesHttpApiRepository());
+}
 
