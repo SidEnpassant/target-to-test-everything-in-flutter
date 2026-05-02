@@ -77,10 +77,10 @@ class NetworkworkServicesApi implements BaseApiServices{
   dynamic returnResponse(http.Response response){
     switch(response.statusCode){
       case 200:
-        dynamic jsonResponse = jsonEncode(response.body);
+        dynamic jsonResponse = jsonDecode(response.body);
         return jsonResponse;
       case 400:
-        dynamic jsonResponse = jsonEncode(response.body);
+        dynamic jsonResponse = jsonDecode(response.body);
         return jsonResponse;
       case 401:
         // dynamic jsonResponse = jsonEncode(response.body);

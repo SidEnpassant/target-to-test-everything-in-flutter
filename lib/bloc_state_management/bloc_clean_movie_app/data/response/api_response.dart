@@ -1,6 +1,6 @@
 
 
-import 'package:testapp/bloc_clean_movie_app/utils/enums.dart';
+import 'package:testapp/bloc_state_management/bloc_clean_movie_app/utils/enums.dart';
 
 class ApiResponse<T>{
 

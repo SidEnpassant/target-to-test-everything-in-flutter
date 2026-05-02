@@ -7,7 +7,7 @@ part of 'movies.dart';
 // **************************************************************************
 
 _MoviesModel _$MoviesModelFromJson(Map<String, dynamic> json) => _MoviesModel(
-  total: json['total'] as String? ?? '',
+  total: (json['total'] as num?)?.toInt() ?? 0,
   page: (json['page'] as num?)?.toInt() ?? 0,
   pages: (json['pages'] as num?)?.toInt() ?? 0,
   tvShow:

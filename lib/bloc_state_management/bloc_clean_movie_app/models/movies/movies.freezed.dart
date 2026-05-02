@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$MoviesModel {
 
-@JsonKey(name: 'total') String get total;//Total number of movies
+@JsonKey(name: 'total') int get total;//Total number of movies
  int get page;//Current page number
  int get pages;//Total number of pages
 @JsonKey(name: 'tv_shows') List<TvShows> get tvShow;
@@ -51,7 +51,7 @@ abstract mixin class $MoviesModelCopyWith<$Res>  {
   factory $MoviesModelCopyWith(MoviesModel value, $Res Function(MoviesModel) _then) = _$MoviesModelCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'total') String total, int page, int pages,@JsonKey(name: 'tv_shows') List<TvShows> tvShow
+@JsonKey(name: 'total') int total, int page, int pages,@JsonKey(name: 'tv_shows') List<TvShows> tvShow
 });
 
 
@@ -71,7 +71,7 @@ class _$MoviesModelCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') @override $Res call({Object? total = null,Object? page = null,Object? pages = null,Object? tvShow = null,}) {
   return _then(_self.copyWith(
 total: null == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
-as String,page: null == page ? _self.page : page // ignore: cast_nullable_to_non_nullable
+as int,page: null == page ? _self.page : page // ignore: cast_nullable_to_non_nullable
 as int,pages: null == pages ? _self.pages : pages // ignore: cast_nullable_to_non_nullable
 as int,tvShow: null == tvShow ? _self.tvShow : tvShow // ignore: cast_nullable_to_non_nullable
 as List<TvShows>,
@@ -159,7 +159,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'total')  String total,  int page,  int pages, @JsonKey(name: 'tv_shows')  List<TvShows> tvShow)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'total')  int total,  int page,  int pages, @JsonKey(name: 'tv_shows')  List<TvShows> tvShow)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _MoviesModel() when $default != null:
 return $default(_that.total,_that.page,_that.pages,_that.tvShow);case _:
@@ -180,7 +180,7 @@ return $default(_that.total,_that.page,_that.pages,_that.tvShow);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'total')  String total,  int page,  int pages, @JsonKey(name: 'tv_shows')  List<TvShows> tvShow)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'total')  int total,  int page,  int pages, @JsonKey(name: 'tv_shows')  List<TvShows> tvShow)  $default,) {final _that = this;
 switch (_that) {
 case _MoviesModel():
 return $default(_that.total,_that.page,_that.pages,_that.tvShow);case _:
@@ -200,7 +200,7 @@ return $default(_that.total,_that.page,_that.pages,_that.tvShow);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'total')  String total,  int page,  int pages, @JsonKey(name: 'tv_shows')  List<TvShows> tvShow)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'total')  int total,  int page,  int pages, @JsonKey(name: 'tv_shows')  List<TvShows> tvShow)?  $default,) {final _that = this;
 switch (_that) {
 case _MoviesModel() when $default != null:
 return $default(_that.total,_that.page,_that.pages,_that.tvShow);case _:
@@ -215,10 +215,10 @@ return $default(_that.total,_that.page,_that.pages,_that.tvShow);case _:
 @JsonSerializable()
 
 class _MoviesModel implements MoviesModel {
-   _MoviesModel({@JsonKey(name: 'total') this.total = '', this.page = 0, this.pages = 0, @JsonKey(name: 'tv_shows') final  List<TvShows> tvShow = const []}): _tvShow = tvShow;
+   _MoviesModel({@JsonKey(name: 'total') this.total = 0, this.page = 0, this.pages = 0, @JsonKey(name: 'tv_shows') final  List<TvShows> tvShow = const []}): _tvShow = tvShow;
   factory _MoviesModel.fromJson(Map<String, dynamic> json) => _$MoviesModelFromJson(json);
 
-@override@JsonKey(name: 'total') final  String total;
+@override@JsonKey(name: 'total') final  int total;
 //Total number of movies
 @override@JsonKey() final  int page;
 //Current page number
@@ -266,7 +266,7 @@ abstract mixin class _$MoviesModelCopyWith<$Res> implements $MoviesModelCopyWith
   factory _$MoviesModelCopyWith(_MoviesModel value, $Res Function(_MoviesModel) _then) = __$MoviesModelCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'total') String total, int page, int pages,@JsonKey(name: 'tv_shows') List<TvShows> tvShow
+@JsonKey(name: 'total') int total, int page, int pages,@JsonKey(name: 'tv_shows') List<TvShows> tvShow
 });
 
 
@@ -286,7 +286,7 @@ class __$MoviesModelCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? total = null,Object? page = null,Object? pages = null,Object? tvShow = null,}) {
   return _then(_MoviesModel(
 total: null == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
-as String,page: null == page ? _self.page : page // ignore: cast_nullable_to_non_nullable
+as int,page: null == page ? _self.page : page // ignore: cast_nullable_to_non_nullable
 as int,pages: null == pages ? _self.pages : pages // ignore: cast_nullable_to_non_nullable
 as int,tvShow: null == tvShow ? _self._tvShow : tvShow // ignore: cast_nullable_to_non_nullable
 as List<TvShows>,

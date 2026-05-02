@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:testapp/bloc_clean_movie_app/bloc/movies_bloc.dart';
-import 'package:testapp/bloc_clean_movie_app/utils/enums.dart';
+import 'package:testapp/bloc_state_management/bloc_clean_movie_app/utils/enums.dart';
+
 import 'package:testapp/dart_oops/abstraction/main.dart';
 import 'package:testapp/main.dart';
-
-import '../../../bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/config/routes/routes_name.dart';
-import '../../../bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/services/storage/local_storage.dart';
+import '../../../flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/config/routes/routes_name.dart';
+import '../../../flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/services/storage/local_storage.dart';
+import '../../bloc/movies_bloc.dart';
 
 
 class MoviesHomeScreen extends StatefulWidget {

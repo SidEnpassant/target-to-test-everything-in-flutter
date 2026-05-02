@@ -293,8 +293,8 @@
 // BLOC CLEAN CODING _secure_storage_reusable_components_singleton_pattern
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'package:testapp/bloc_clean_movie_app/repository/movies/movies_http_api_repository.dart';
-import 'package:testapp/bloc_clean_movie_app/repository/movies/movies_repository.dart';
+import 'package:testapp/bloc_state_management/bloc_clean_movie_app/repository/movies/movies_http_api_repository.dart';
+import 'package:testapp/bloc_state_management/bloc_clean_movie_app/repository/movies/movies_repository.dart';
 import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/config/routes/routes_name.dart';
 import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/repository/auth/login_http_api_repository.dart';
 import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/repository/auth/login_mock_api_repository.dart';

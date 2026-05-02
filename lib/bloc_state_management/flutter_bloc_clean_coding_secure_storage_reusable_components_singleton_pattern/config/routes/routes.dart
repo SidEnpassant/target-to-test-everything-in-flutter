@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/config/routes/routes_name.dart';
 
-import '../../../../bloc_clean_movie_app/view/home/movies_home_screen.dart';
+import '../../../bloc_clean_movie_app/view/home/movies_home_screen.dart';
 import '../../view/view.dart';
 
 

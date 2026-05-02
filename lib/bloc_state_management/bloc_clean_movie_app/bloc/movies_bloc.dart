@@ -1,9 +1,9 @@
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:testapp/bloc_clean_movie_app/data/response/api_response.dart';
-import 'package:testapp/bloc_clean_movie_app/models/movies/movies.dart';
-import 'package:testapp/bloc_clean_movie_app/repository/movies/movies_repository.dart';
+import 'package:testapp/bloc_state_management/bloc_clean_movie_app/data/response/api_response.dart';
+import 'package:testapp/bloc_state_management/bloc_clean_movie_app/models/movies/movies.dart';
+import 'package:testapp/bloc_state_management/bloc_clean_movie_app/repository/movies/movies_repository.dart';
 
 part 'movies_event.dart';
 part 'movies_state.dart';
