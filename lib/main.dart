@@ -300,6 +300,8 @@ import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_s
 import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/repository/auth/login_mock_api_repository.dart';
 import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/repository/auth/login_repository.dart';
 import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/view/splash/splash_screen.dart';
+import 'package:testapp/rest_api_covid_app/splash_screen.dart';
+import 'package:testapp/rest_api_post/UploadImageScreen.dart';
 
 import 'bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/config/routes/routes.dart';
 
@@ -319,13 +321,18 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
-          //brightness: Brightness.dark,
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          brightness: Brightness.dark,
+
+          // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          primarySwatch: Colors.blue,
           useMaterial3: true,
         ),
-        //home: CounterScreen(),
-      initialRoute: RoutesName.moviesHomeScreen,
-      onGenerateRoute: Routes.generateRoute,
+        //home: Uploadimagescreen(),
+        home: SplashScreenCovidApp(),
+      // ---- THESE FOR BLOC STATE MANAGEMENT CLEAN CODE ----------
+      // initialRoute: RoutesName.moviesHomeScreen,
+      // onGenerateRoute: Routes.generateRoute,
+      // ---- THESE FOR BLOC STATE MANAGEMENT CLEAN CODE ----------
       );
   }
 }
