@@ -301,6 +301,7 @@ import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_s
 import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/repository/auth/login_repository.dart';
 import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/view/splash/splash_screen.dart';
 import 'package:testapp/rest_api_covid_app/splash_screen.dart';
+import 'package:testapp/rest_api_get/fill_data_from_api_into_dropdown/drop_down_api.dart';
 import 'package:testapp/rest_api_post/UploadImageScreen.dart';
 
 import 'bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/config/routes/routes.dart';
@@ -328,7 +329,8 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         //home: Uploadimagescreen(),
-        home: SplashScreenCovidApp(),
+        //home: SplashScreenCovidApp(),
+        home: DropDownApi(),
       // ---- THESE FOR BLOC STATE MANAGEMENT CLEAN CODE ----------
       // initialRoute: RoutesName.moviesHomeScreen,
       // onGenerateRoute: Routes.generateRoute,
