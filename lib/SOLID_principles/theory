@@ -1,0 +1,27 @@
+
+
+SOLID principles is a mnemonic acronym for five design principles intended to make
+software designs more understandable , flexible and maintainable .
+
+
+S - Single responsibility principle
+O - Open closed principle
+L - Liskov substitution principle
+I - Interface segregation principle
+D - Dependency Inversion principle
+
+
+1) S - Single responsibility principle
+A class should have one and only one reason to change , meaning that a class should have only
+one job.
+
+2) O - Open closed principle
+Objects or entities should be open for extension , but closed for modification . Should not be
+modified can be extended
+
+
+3) L - Liskov substitution principle
+Let q(x) be a property provable about objects of x of type T . Then q(y) should be provable
+for objects y of type S where S is a subtype of T
+ALL THIS IS STATING IS THAT EVERY SUBCLASS / DERIVED CLASS SHOULD BE SUBSTITUTABLE FOR THEIR
+BASE / PARENT CLASS.
