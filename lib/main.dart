@@ -331,10 +331,10 @@ class MyApp extends StatelessWidget {
         //home: Uploadimagescreen(),
         //home: SplashScreenCovidApp(),
         home: DropDownApi(),
-      // ---- THESE FOR BLOC STATE MANAGEMENT CLEAN CODE ----------
-      // initialRoute: RoutesName.moviesHomeScreen,
-      // onGenerateRoute: Routes.generateRoute,
-      // ---- THESE FOR BLOC STATE MANAGEMENT CLEAN CODE ----------
+        // ---- THESE FOR BLOC STATE MANAGEMENT CLEAN CODE ----------
+        // initialRoute: RoutesName.moviesHomeScreen,
+        // onGenerateRoute: Routes.generateRoute,
+        // ---- THESE FOR BLOC STATE MANAGEMENT CLEAN CODE ----------
       );
   }
 }

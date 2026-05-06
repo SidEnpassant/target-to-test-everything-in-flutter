@@ -25,3 +25,13 @@ Let q(x) be a property provable about objects of x of type T . Then q(y) should 
 for objects y of type S where S is a subtype of T
 ALL THIS IS STATING IS THAT EVERY SUBCLASS / DERIVED CLASS SHOULD BE SUBSTITUTABLE FOR THEIR
 BASE / PARENT CLASS.
+
+
+4) I - Interface segregation principle
+A client should never be forced to implement and interface that it doesn't use or clients should
+not be forced ti depend on methods they do not use.
+
+
+5) D - Dependency Inversion principle
+Entities must depend on abstractions not on concretions , It states that the high level module
+must not depend on the low level module , but they should depend on abstractions
