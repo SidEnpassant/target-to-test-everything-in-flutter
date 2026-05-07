@@ -291,58 +291,85 @@
 // }
 
 // BLOC CLEAN CODING _secure_storage_reusable_components_singleton_pattern
+// import 'package:flutter/material.dart';
+// import 'package:get_it/get_it.dart';
+// import 'package:testapp/bloc_state_management/bloc_clean_movie_app/repository/movies/movies_http_api_repository.dart';
+// import 'package:testapp/bloc_state_management/bloc_clean_movie_app/repository/movies/movies_repository.dart';
+// import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/config/routes/routes_name.dart';
+// import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/repository/auth/login_http_api_repository.dart';
+// import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/repository/auth/login_mock_api_repository.dart';
+// import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/repository/auth/login_repository.dart';
+// import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/view/splash/splash_screen.dart';
+// import 'package:testapp/rest_api_covid_app/splash_screen.dart';
+// import 'package:testapp/rest_api_get/fill_data_from_api_into_dropdown/drop_down_api.dart';
+// import 'package:testapp/rest_api_post/UploadImageScreen.dart';
+//
+// import 'bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/config/routes/routes.dart';
+//
+// GetIt getIt = GetIt.instance;
+// void main() {
+//   serviceLocator();
+//   runApp(const MyApp());
+// }
+//
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+//
+//   // This widget is the root of your application.
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         debugShowCheckedModeBanner: false,
+//         title: 'Flutter Demo',
+//         theme: ThemeData(
+//           brightness: Brightness.dark,
+//
+//           // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+//           primarySwatch: Colors.blue,
+//           useMaterial3: true,
+//         ),
+//         //home: Uploadimagescreen(),
+//         //home: SplashScreenCovidApp(),
+//         home: DropDownApi(),
+//         // ---- THESE FOR BLOC STATE MANAGEMENT CLEAN CODE ----------
+//         // initialRoute: RoutesName.moviesHomeScreen,
+//         // onGenerateRoute: Routes.generateRoute,
+//         // ---- THESE FOR BLOC STATE MANAGEMENT CLEAN CODE ----------
+//       );
+//   }
+// }
+//
+//
+//
+// void serviceLocator(){
+//   getIt.registerLazySingleton<LoginRepository>(() => LoginHttpApiRepository());
+//   getIt.registerLazySingleton<MoviesRepository>(() => MoviesHttpApiRepository());
+// }
+//
+
+/////// ISOLATES
+
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
-import 'package:testapp/bloc_state_management/bloc_clean_movie_app/repository/movies/movies_http_api_repository.dart';
-import 'package:testapp/bloc_state_management/bloc_clean_movie_app/repository/movies/movies_repository.dart';
-import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/config/routes/routes_name.dart';
-import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/repository/auth/login_http_api_repository.dart';
-import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/repository/auth/login_mock_api_repository.dart';
-import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/repository/auth/login_repository.dart';
-import 'package:testapp/bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/view/splash/splash_screen.dart';
-import 'package:testapp/rest_api_covid_app/splash_screen.dart';
-import 'package:testapp/rest_api_get/fill_data_from_api_into_dropdown/drop_down_api.dart';
-import 'package:testapp/rest_api_post/UploadImageScreen.dart';
+import 'isolates/isolate_home_page.dart';
 
-import 'bloc_state_management/flutter_bloc_clean_coding_secure_storage_reusable_components_singleton_pattern/config/routes/routes.dart';
-
-GetIt getIt = GetIt.instance;
 void main() {
-  serviceLocator();
+
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
-          brightness: Brightness.dark,
-
-          // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          primarySwatch: Colors.blue,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        //home: Uploadimagescreen(),
-        //home: SplashScreenCovidApp(),
-        home: DropDownApi(),
-        // ---- THESE FOR BLOC STATE MANAGEMENT CLEAN CODE ----------
-        // initialRoute: RoutesName.moviesHomeScreen,
-        // onGenerateRoute: Routes.generateRoute,
-        // ---- THESE FOR BLOC STATE MANAGEMENT CLEAN CODE ----------
+      home: IsolateHomePage(),
       );
   }
 }
-
-
-
-void serviceLocator(){
-  getIt.registerLazySingleton<LoginRepository>(() => LoginHttpApiRepository());
-  getIt.registerLazySingleton<MoviesRepository>(() => MoviesHttpApiRepository());
-}
-
