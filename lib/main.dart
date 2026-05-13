@@ -441,9 +441,48 @@
 
 
 
-///// -----------  SQFLITE ------------- \\\\
+///// -----------  SQFLITE , WEBSOCKET ------------- \\\\
+// import 'package:flutter/material.dart';
+// import 'package:testapp/sqflite/home_page_sqflite.dart';
+// import 'package:testapp/websocket/websocketHomePage.dart';
+// import 'package:web_socket_channel/io.dart';
+//
+// void main() {
+//
+//   runApp(const MyApp());
+// }
+//
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       title: 'Flutter Demo',
+//       theme: ThemeData(
+//         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
+//         useMaterial3: true,
+//       ),
+//       //home: HomePageSqflite(),
+//       home: Websockethomepage(
+//         channel: IOWebSocketChannel.connect("ws://echo.websocket.org"),
+//       ),
+//     );
+//   }
+// }
+
+
+///// ------------------------ GRAPHQL -----------------------\\\\\\\\\\\
+
+
+
+
 import 'package:flutter/material.dart';
-import 'package:testapp/sqflite/home_page_sqflite.dart';
+import 'package:graphql_flutter/graphql_flutter.dart';
+
+import 'GraphQL/graphqlpage.dart';
+
 
 void main() {
 
@@ -455,14 +494,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
-        useMaterial3: true,
-      ),
-      home: HomePageSqflite(),
+    final HttpLink httpLink = HttpLink('https://countries.trevorblades.com/');
+    final ValueNotifier<GraphQLClient> client = ValueNotifier<GraphQLClient>(
+      GraphQLClient(
+          link: httpLink as Link ,
+          cache: GraphQLCache(
+            store: HiveStore(),
+          )
+      )
+    );
+    return GraphQLProvider(
+      client: client,
+      child: Graphqlpage(),
     );
   }
 }
