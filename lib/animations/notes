@@ -1,0 +1,6 @@
+
+Explicit Animations - Give us more control(using animation controllers) , but
+are more complex to create
+
+Implicit Animations - Give us less control , but are easier to create using
+either custom or built in animated widgets
